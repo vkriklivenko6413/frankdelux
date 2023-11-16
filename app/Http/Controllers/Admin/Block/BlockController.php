@@ -17,7 +17,7 @@ class BlockController extends Controller
     {
         $blockOne = BlockOne::query()->find(1);
 
-        return view('admin.block.blockOne', compact('blockOne'));
+        return view('admin.block.blockone', compact('blockOne'));
     }
 
     public function blockFour(): View
