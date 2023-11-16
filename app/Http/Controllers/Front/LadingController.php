@@ -8,6 +8,7 @@ use App\Models\Block\BlockOne;
 use App\Models\Block\BlockThree;
 use App\Models\Block\BlockTwo;
 use App\Models\Card;
+use App\Models\Review;
 use App\Models\Seo\SeoContact;
 use App\Models\Seo\SeoLading;
 use App\Models\Setting;
@@ -22,8 +23,9 @@ class LadingController extends Controller
         $blockTwo = BlockTwo::query()->first();
         $blockThree = BlockThree::query()->first();
         $blockFour = BlockFour::query()->first();
+        $reviews = Review::query()->get();
 
-        return view('front.index', compact('cards', 'seo', 'blockOne', 'blockTwo', 'blockThree', 'blockFour'));
+        return view('front.index', compact('cards', 'seo', 'blockOne', 'blockTwo', 'blockThree', 'blockFour', 'reviews'));
     }
 
     public function show($id)

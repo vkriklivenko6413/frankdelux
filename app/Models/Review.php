@@ -5,21 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CardDescription extends Model
+class Review extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
-        'title',
+        'name',
         'description',
-        'size',
+        'rating',
+        'avatar',
+        'photo',
     ];
 
-
-
     protected $casts = [
+        'name' => 'array',
         'description' => 'array',
-        'title' => 'array'
     ];
 }

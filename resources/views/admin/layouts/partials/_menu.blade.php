@@ -30,27 +30,28 @@
                         </span>
                     </div>
                 </a>
-                <a class="nav-link" href="{{ route('admin.seo.lading') }}" role="button">
+                <a class="nav-link" href="{{ route('admin.review.list') }}" role="button">
                     <div class="d-flex align-items-center">
                         <span class="nav-link-icon">
                             <span class="fas fa-tags"></span>
                         </span>
                         <span class="nav-link-text ps-1">
-                            SEO Главная
+                           Отзывы
                         </span>
                     </div>
                 </a>
+{{--                <a class="nav-link" href="{{ route('admin.seo.lading') }}" role="button">--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <span class="nav-link-icon">--}}
+{{--                            <span class="fas fa-tags"></span>--}}
+{{--                        </span>--}}
+{{--                        <span class="nav-link-text ps-1">--}}
+{{--                            SEO Главная--}}
+{{--                        </span>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
 
-                <a class="nav-link" href="{{ route('admin.setting.list') }}" role="button">
-                    <div class="d-flex align-items-center">
-                        <span class="nav-link-icon">
-                            <span class="fas fa-tags"></span>
-                        </span>
-                        <span class="nav-link-text ps-1">
-                            Настройки
-                        </span>
-                    </div>
-                </a>
+
 
                 <a class="nav-link" href="{{ route('admin.block.blockOne') }}" role="button">
                     <div class="d-flex align-items-center">
@@ -93,6 +94,16 @@
                         </span>
                         <span class="nav-link-text ps-1">
                             Блок 4
+                        </span>
+                    </div>
+                </a>
+                <a class="nav-link" href="{{ route('admin.setting.list') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Настройки
                         </span>
                     </div>
                 </a>

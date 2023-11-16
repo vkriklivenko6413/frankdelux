@@ -40,6 +40,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/card/active/{id}', [CardController::class, 'cardActiveStatus'])->name('admin.card.active');
     Route::get('/admin/card/disable/{id}', [CardController::class, 'cardDisableStatus'])->name('admin.card.disable');
 
+
+    Route::get('/admin/review/list', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'list'])->name('admin.review.list');
+    Route::get('/admin/review/add', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'add'])->name('admin.review.add');
+    Route::post('/admin/review/store', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'store'])->name('admin.review.store');
+    Route::get('/admin/review/edit/{id}', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'edit'])->name('admin.review.edit');
+    Route::get('/admin/review/delete/{id}', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'delete'])->name('admin.review.delete');
+
+
     Route::get('/admin/seo/lading', [SeoController::class, 'seoIndex'])->name('admin.seo.lading');
     Route::get('/admin/seo/contact', [SeoController::class, 'seoContact'])->name('admin.seo.contact');
     Route::post('/admin/seo/lading/update/{id}', [SeoController::class, 'updateSeoIndex'])->name('admin.seo.lading.update');
@@ -61,6 +69,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/block/blockfour/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockFour'])->name('admin.block.blockFour');
     Route::post('/admin/block/blockfour/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockFour'])->name('admin.block.update.blockFour');
+
+
 
 });
 
