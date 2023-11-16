@@ -19,9 +19,9 @@ Route::group(['prefix' => \App\Http\Middleware\SetLanguage::getLocale()], functi
     Route::get('/product/{id}', [LadingController::class, 'show'])->name('front.product.show');
     Route::post('/send/card', [FormController::class, 'sendFormCard'])->name('send.card');
     Route::post('/callback', [FormController::class, 'callback'])->name('send.callback');
-    Route::get('/success', [FormController::class,'popupSuccess'])->name('front.success');
-    Route::get('/success-callback', [FormController::class,'popupSuccessCallback'])->name('front.success-callback');
-    Route::get('/contact', [LadingController::class,'contact'])->name('front.contact');
+    Route::get('/success', [FormController::class, 'popupSuccess'])->name('front.success');
+    Route::get('/success-callback', [FormController::class, 'popupSuccessCallback'])->name('front.success-callback');
+    Route::get('/contact', [LadingController::class, 'contact'])->name('front.contact');
 
 });
 
@@ -33,11 +33,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/change/{card}', [CardController::class, 'change'])->name('admin.card.change');
     Route::get('/admin/copy/{card}', [CardController::class, 'copy'])->name('admin.card.copy');
     Route::post('/admin/card/reorder', [CardController::class, 'reorder'])->name('admin.card.reorder');
-
     Route::get('/admin/card/move-up/{id}', [CardController::class, 'moveUp'])->name('admin.card.moveUp');
     Route::get('/admin/card/move-down/{id}', [CardController::class, 'moveDown'])->name('admin.card.moveDown');
-
-
     Route::get('/admin/delete/{id}', [CardController::class, 'delete'])->name('admin.card.delete');
     Route::post('/admin/store', [CardController::class, 'store'])->name('admin.card.store');
     Route::get('/admin/card/active/{id}', [CardController::class, 'cardActiveStatus'])->name('admin.card.active');
@@ -52,7 +49,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/setting', [SettingsController::class, 'setting'])->name('admin.setting.list');
     Route::post('/admin/setting/{id}', [SettingsController::class, 'update'])->name('admin.setting.update');
 
+    Route::get('/admin/block/blockone/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockOne'])->name('admin.block.blockOne');
+    Route::post('/admin/block/blockone/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockOne'])->name('admin.block.update.blockOne');
 
+
+    Route::get('/admin/block/blocktwo/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockTwo'])->name('admin.block.blockTwo');
+    Route::post('/admin/block/blocktwo/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockTwo'])->name('admin.block.update.blockTwo');
+
+    Route::get('/admin/block/blockthree/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockThree'])->name('admin.block.blockThree');
+    Route::post('/admin/block/blockthree/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockThree'])->name('admin.block.update.blockThree');
+
+    Route::get('/admin/block/blockfour/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockFour'])->name('admin.block.blockFour');
+    Route::post('/admin/block/blockfour/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockFour'])->name('admin.block.update.blockFour');
 
 });
 

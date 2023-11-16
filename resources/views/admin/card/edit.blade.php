@@ -37,26 +37,26 @@
 
                             <div class="col-md-6">
                                 <label class="form-label" for="title_uk">
-                                    🇺🇦 Название
+                                    🇲🇩 Название
                                 </label>
-                                <input class="form-control" id="title_uk" value="{{ $card->title['uk'] }}"
-                                       name="title[uk]" type="text">
+                                <input class="form-control" id="title_uk" value="{{ $card->title['ro'] }}"
+                                       name="title[ro]" type="text">
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label" for="title_ru">
                                     🇷🇺 Описание*
                                 </label>
-                                <textarea class="form-control" id="title_uk"
-                                          name="description[ru]" type="text">{{ $card->description['ru'] }}</textarea>
+                                <textarea class="form-control" id="message2"
+                                          name="description[ru]" type="text">{!! $card->description['ru'] !!}</textarea>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label" for="title_uk">
-                                    🇺🇦 Описание
+                                    🇲🇩 Описание
                                 </label>
-                                <textarea class="form-control" id="title_uk"
-                                          name="description[uk]" type="text"> {{ $card->description['uk'] }}</textarea>
+                                <textarea class="form-control" id="message1"
+                                          name="description[ro]" type="text"> {!! $card->description['ro'] !!}</textarea>
                             </div>
 
 
@@ -149,5 +149,12 @@
                 .getElementById('remove-images')
                 .appendChild(input)
         }
+    </script>
+
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('message1', {});
+
+        CKEDITOR.replace('message2', {});
     </script>
 @endsection

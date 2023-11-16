@@ -5,32 +5,33 @@
         <div class="main__container">
             <div class="main__wrapper">
                 <div class="main__content">
-                    <h1 class="main__title">Мебель твоего дома</h1>
-                    <p class="main__text">Превратите свою комнату с Frank De Lux в более минималистичную и современную с легкостью и быстротой</p>
-                    <a href="#form" class="main__link--btn">Оставить заявку</a>
+                    <h1 class="main__title">{{ $blockOne->title[app()->getLocale()] }}</h1>
+                    <p class="main__text">{{ $blockOne->description[app()->getLocale()] }}</p>
+                    <a href="#form" class="main__link--btn">{{ $blockOne->button[app()->getLocale()] }}</a>
                 </div>
             </div>
         </div>
         <div class="main__bg">
-            <picture><source srcset="img/bg/bg-01.webp" type="image/webp"><img src="img/bg/bg-01.jpg" alt=""></picture>
+            <picture>
+                <source srcset="{{ asset('storage/block/') }}/{{ $blockOne->photo }}" type="image/webp">
+                <img src="{{ asset('storage/block/') }}/{{ $blockOne->photo }}" alt=""></picture>
         </div>
     </section>
     <section id="advantages" class="advantages">
         <div class="advantages__container">
-            <h2 class="advantages__title-top">Наши
-                преимущества</h2>
+            <h2 class="advantages__title-top">{{ $blockTwo->title[app()->getLocale()] }}</h2>
             <div class="advantages__wrapper">
                 <div class="advantages__item">
-                    <h3 class="advantages__title">Быстрая доставка</h3>
-                    <p class="advantages__text">Мы отправляем заказ во все города Украины и гарантируем всем клиентам максимально быструю доставку. Если вы оплатите товар в первой половине дня, то во второй мы его отправим с помощью компаний-перевозчиков.</p>
+                    <h3 class="advantages__title">{{ $blockTwo->preview_title_1[app()->getLocale()] }}</h3>
+                    <p class="advantages__text">{{ $blockTwo->description_1[app()->getLocale()] }}</p>
                 </div>
                 <div class="advantages__item">
-                    <h3 class="advantages__title">Быстрая сборка</h3>
-                    <p class="advantages__text">Главное преимущество нашей компании – полный комплекс услуг. Это значит, что мы предоставляем не только доставку до подъезда, но и подъем на этаж и сборку корпусной мебели в удобный для вас день и время.</p>
+                    <h3 class="advantages__title">{{ $blockTwo->preview_title_2[app()->getLocale()] }}</h3>
+                    <p class="advantages__text">{{ $blockTwo->description_2[app()->getLocale()] }}</p>
                 </div>
                 <div class="advantages__item">
-                    <h3 class="advantages__title">Гарантия</h3>
-                    <p class="advantages__text">Вся мебельная продукция, выставленная у нас на сайте, имеет сертификат соответствия и официальную гарантию от производителя. Мы любим и ценим каждого нашего покупателя.</p>
+                    <h3 class="advantages__title">{{ $blockTwo->preview_title_3[app()->getLocale()] }}</h3>
+                    <p class="advantages__text">{{ $blockTwo->description_3[app()->getLocale()] }}</p>
                 </div>
             </div>
         </div>
@@ -40,13 +41,14 @@
             <div class="about__wrapper">
                 <div class="about__image--wrap">
                     <div class="about__image">
-                        <picture><source srcset="img/bg/bg-02.webp" type="image/webp"><img src="img/bg/bg-02.jpg" alt=""></picture>
+                        <picture>
+                            <source srcset="{{ asset('storage/block') }}/{{ $blockThree->photo }}" type="image/webp">
+                            <img src="{{ asset('storage/block') }}/{{ $blockThree->photo }}" alt=""></picture>
                     </div>
                 </div>
                 <div class="about__content">
-                    <h2 class="about__title">О нас</h2>
-                    <p class="about__text">Ищете мебель для дома? В нашем магазине можно найти все необходимое для обустройства: кухни, прихожей, спальни, ванной комнаты. На страницах каталога вас ждет большой выбор моделей от известных украинских производителей, которые уже давно заслужили доверие потребителей.</p>
-                    <p class="about__text"> У нас самые выгодные цены и условия доставки. Оплатить товар можно любым удобным способом: оформить кредит или рассрочку, или даже оформить оплату частями.</p>
+                    <h2 class="about__title">{{ $blockThree->title[app()->getLocale()] }}</h2>
+                    <p class="about__text">{{ $blockThree->description[app()->getLocale()] }}</p>
                 </div>
             </div>
         </div>
@@ -57,20 +59,20 @@
             <div class="categories__slider swiper">
                 <div class="categories__wrapper swiper-wrapper">
                     @foreach($cards as $card)
-                    <a href="{{ route('front.product.show',$card->id) }}" class="categories__slide swiper-slide">
-                        <div class="categories__image">
-                            <picture><source srcset="storage/card/{{ $card->preview_photo }}" type="image/webp"><img src="storage/card/{{ $card->preview_photo }}" alt=""></picture>
-                        </div>
-                        <div class="categories__content">
-                            <h3 class="categories__title">{{ $card->title[app()->getLocale()] }}</h3>
-                            <ul class="categories__list">
-                                <li class="categories__item">Столы для кухни</li>
-                                <li class="categories__item">Кухонные уголки</li>
-                                <li class="categories__item">Табуретки</li>
-                                <li class="categories__item">Обеденные комплекты</li>
-                            </ul>
-                        </div>
-                    </a>
+                        <a href="{{ route('front.product.show',$card->id) }}" class="categories__slide swiper-slide">
+                            <div class="categories__image">
+                                <picture>
+                                    <source srcset="storage/card/{{ $card->preview_photo }}" type="image/webp">
+                                    <img src="storage/card/{{ $card->preview_photo }}" alt=""></picture>
+                            </div>
+                            <div class="categories__content">
+                                <h3 class="categories__title">{{ $card->title[app()->getLocale()] }}</h3>
+                                <ul class="categories__list">
+                                    {!! $card->description[App::currentLocale()] !!}
+
+                                </ul>
+                            </div>
+                        </a>
                     @endforeach
                 </div>
                 <div class="categories__button--nav">
@@ -84,13 +86,13 @@
         <div class="block__container">
             <div class="block__wrapper">
                 <div class="block__content">
-                    <h2 class="block__title">Достойное качество, широкий ассортимент и доступные цены!</h2>
-                    <a href="#form" class="block__link--btn">Оставить заявку</a>
+                    <h2 class="block__title">{{ $blockFour->title[app()->getLocale()] }}</h2>
+                    <a href="#form" class="block__link--btn">{{ $blockFour->button[app()->getLocale()]}}</a>
                 </div>
             </div>
         </div>
         <div class="block__bg">
-            <picture><source srcset="img/bg/bg-03.webp" type="image/webp"><img src="img/bg/bg-03.jpg" alt=""></picture>
+            <picture><source srcset="{{ asset('storage/block/') }}/{{ $blockFour->photo }}" type="image/webp"><img src="{{ asset('storage/block/') }}/{{ $blockFour->photo }}" alt=""></picture>
         </div>
     </section>
     <section id="reviews" class="reviews">

@@ -212,12 +212,12 @@ class CardController extends Controller
 
         $data['title'] = [
             'ru' => $data['title_ru'],
-            'uk' => $data['title_uk']
+            'ro' => $data['title_uk']
         ];
 
         $data['description'] = [
             'ru' => $data['description_ru'],
-            'uk' => $data['description_uk']
+            'ro' => $data['description_uk']
         ];
 
         $card = Card::query()->create($data);

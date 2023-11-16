@@ -57,19 +57,18 @@
                     </div>
                 </div>
             </div>
-            <div class="header__block">
-                <div class="header__language-mob language-mob">
-                    <input checked class="language-mob__radio" type="radio" id="select-ru" name="select_lang">
-                    <label for="select-ru">
-                        <a href="" class="language-mob__link select-ru">Рус</a>
-                    </label>
-                    <input class="language-mob__radio" type="radio" id="select-rom" name="select_lang">
-                    <label for="select-rom">
-                        <a href="" class="language-mob__link select-rom">Рум</a>
-                    </label>
-                </div>
-                <button type="button" class="menu__icon icon-menu"><span></span></button>
+            <div class="header__language-mob language-mob">
+                <input @if(App::currentLocale() == 'ru')checked @endif class="language-mob__radio" type="radio" id="select-ru" name="select_lang">
+                <label for="select-ru">
+                    <a href="{{ route('lang', 'ru') }}" class="language-mob__link select-ru">Рус</a>
+                </label>
+
+                <input @if(App::currentLocale() == 'ro')checked @endif  class="language-mob__radio" type="radio" id="select-rom" name="select_lang">
+                <label for="select-rom">
+                    <a href="{{ route('lang', 'ro') }}" class="language-mob__link select-rom">Рум</a>
+                </label>
             </div>
+
         </div>
     </header>
     <main>

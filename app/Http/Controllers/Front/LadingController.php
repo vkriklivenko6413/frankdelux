@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Block\BlockFour;
+use App\Models\Block\BlockOne;
+use App\Models\Block\BlockThree;
+use App\Models\Block\BlockTwo;
 use App\Models\Card;
 use App\Models\Seo\SeoContact;
 use App\Models\Seo\SeoLading;
@@ -14,8 +18,12 @@ class LadingController extends Controller
     {
         $cards = Card::query()->where('active','=',true)->orderBy('integer')->get();
         $seo = SeoLading::find(1);
+        $blockOne = BlockOne::query()->first();
+        $blockTwo = BlockTwo::query()->first();
+        $blockThree = BlockThree::query()->first();
+        $blockFour = BlockFour::query()->first();
 
-        return view('front.index', compact('cards', 'seo'));
+        return view('front.index', compact('cards', 'seo', 'blockOne', 'blockTwo', 'blockThree', 'blockFour'));
     }
 
     public function show($id)

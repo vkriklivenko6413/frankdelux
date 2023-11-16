@@ -59,7 +59,7 @@
                     @foreach($cards as $card)
                         <tr>
                             <td class="id">{{ $card->id }}</td>
-                            <td class="title">{{ $card->title['uk'] }}</td>
+                            <td class="title">{{ $card->title['ru'] }}</td>
 
                             <td>
 

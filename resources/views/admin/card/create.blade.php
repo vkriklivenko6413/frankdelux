@@ -29,7 +29,7 @@
 
                             <div class="col-md-6">
                                 <label class="form-label" for="title_uk">
-                                    🇺🇦 Название
+                                    🇲🇩 Название
                                 </label>
                                 <input class="form-control" id="title_uk" value="{{ old('title_uk') }}"
                                        name="title_uk" type="text">
@@ -39,15 +39,15 @@
                                 <label class="form-label" for="title_ru">
                                     🇷🇺 Описание*
                                 </label>
-                                <textarea class="form-control" id="title_uk"
+                                <textarea class="form-control" id="message2"
                                           name="description_ru" type="text"> {{ old('description_ru') }}</textarea>
                             </div>
 
                             <div class="col-md-6">
                                 <label class="form-label" for="title_uk">
-                                    🇺🇦 Описание
+                                    🇲🇩 Описание
                                 </label>
-                                <textarea class="form-control" id="title_uk"
+                                <textarea class="form-control" id="message1"
                                           name="description_uk" type="text"> {{ old('description_uk') }}</textarea>
                             </div>
 
@@ -72,7 +72,6 @@
                                     <a class="btn btn-danger me-1 mb-1" href="#">
                                         {{ Str::ucfirst(trans('messages.general.back')) }}
                                     </a>
-
                                     <button class="btn btn-success me-1 mb-1">
                                         Создать
                                     </button>
@@ -85,61 +84,11 @@
         </div>
     </div>
 
+    <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     <script>
-        let fieldGroupCount = 5; // Начальное количество групп полей
+        CKEDITOR.replace('message1', {});
 
-        // Создайте шаблон группы полей, который вы хотите использовать
-        const fieldGroupTemplate = `
-    <div class="field-group" id="field-group-{count}">
-        <label class="form-label" for="card_description_ru_{count}">🇷🇺 Название:</label>
-        <input class="form-control" id="card_description_ru_{count}" name="card_description_title_ru[]" type="text">
-
-
-        <label class="form-label" for="card_description_uk_{count}">🇺🇦 Название:</label>
-        <input class="form-control" id="card_description_uk_{count}" name="card_description_title_uk[]" type="text">
-
-        <label class="form-label" for="size_{count}">Размеры (мм, см, кг)</label>
-        <input class="form-control" id="size_{count}" name="size[]" type="text">
-
-        <label class="form-label" for="card_description_title_uk_{count}">🇷🇺 Описание размеров</label>
-        <input class="form-control" id="card_description_title_uk_{count}" name="card_description_ru[]" type="text">
-
-        <label class="form-label" for="card_description_title_ru_{count}">🇺🇦 Описание размеров</label>
-        <input class="form-control" id="card_description_title_ru_{count}" name="card_description_uk[]" type="text">
-        <br>
-        <button type="button" class="remove-field-group btn btn-danger" data-group-id="{count}">Удалить группу</button>
-        <hr> <!-- Разделитель между группами полей -->
-    </div>
-`;
-
-        document.getElementById('add-field-group').addEventListener('click', function () {
-            fieldGroupCount++;
-
-            // Создайте новую группу полей на основе шаблона
-            const newFieldGroup = document.createElement('div');
-            newFieldGroup.className = 'row'; // Это для Bootstrap, чтобы соблюсти структуру столбцов
-            newFieldGroup.innerHTML = fieldGroupTemplate.replace(/{count}/g, fieldGroupCount);
-
-            // Найти контейнер для добавления новой группы полей
-            const childFieldsContainer = document.getElementById('child-fields');
-
-            // Добавьте новую группу полей в конец контейнера
-            childFieldsContainer.appendChild(newFieldGroup);
-
-            // Обработка события для удаления группы полей
-            const removeButtons = document.querySelectorAll('.remove-field-group');
-            removeButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const groupId = this.getAttribute('data-group-id');
-                    const groupToRemove = document.getElementById(`field-group-${groupId}`);
-                    groupToRemove.parentNode.removeChild(groupToRemove);
-                });
-            });
-
-            // Переместите кнопку "Добавить группу полей" под новую группу
-            childFieldsContainer.appendChild(document.getElementById('add-field-group'));
-        });
-
-
+        CKEDITOR.replace('message2', {});
     </script>
+
 @endsection

@@ -51,6 +51,51 @@
                         </span>
                     </div>
                 </a>
+
+                <a class="nav-link" href="{{ route('admin.block.blockOne') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Блок 1
+                        </span>
+                    </div>
+                </a>
+
+
+                <a class="nav-link" href="{{ route('admin.block.blockTwo') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Блок 2
+                        </span>
+                    </div>
+                </a>
+
+                <a class="nav-link" href="{{ route('admin.block.blockThree') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Блок 3
+                        </span>
+                    </div>
+                </a>
+
+                <a class="nav-link" href="{{ route('admin.block.blockFour') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Блок 4
+                        </span>
+                    </div>
+                </a>
 {{--                <a class="nav-link" href="#" role="button">--}}
 {{--                    <div class="d-flex align-items-center">--}}
 {{--                        <span class="nav-link-icon">--}}

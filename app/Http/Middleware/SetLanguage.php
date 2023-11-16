@@ -10,9 +10,9 @@ class SetLanguage
 {
 
 
-    public static $mainLanguage = 'uk'; //основной язык, который не должен отображаться в URl
+    public static $mainLanguage = 'ru'; //основной язык, который не должен отображаться в URl
 
-    public static $languages = ['ru','uk']; // Указываем, какие языки будем использовать в приложении.
+    public static $languages = ['ru','ro']; // Указываем, какие языки будем использовать в приложении.
 
 
     public static function getLocale()
