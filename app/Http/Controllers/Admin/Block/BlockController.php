@@ -24,21 +24,21 @@ class BlockController extends Controller
     {
         $blockFour = BlockFour::query()->find(1);
 
-        return view('admin.block.blockFour', compact('blockFour'));
+        return view('admin.block.blockfour', compact('blockFour'));
     }
 
     public function blockTwo(): View
     {
         $blockTwo = BlockTwo::query()->find(1);
 
-        return view('admin.block.blockTwo', compact('blockTwo'));
+        return view('admin.block.blocktwo', compact('blockTwo'));
     }
 
     public function blockThree(): View
     {
         $blockThree = BlockThree::query()->find(1);
 
-        return view('admin.block.blockThree', compact('blockThree'));
+        return view('admin.block.blockthree', compact('blockThree'));
     }
 
     public function updateBlockThree(Request $request, $id)
