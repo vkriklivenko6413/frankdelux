@@ -13,15 +13,17 @@
                 </div>
             </a>
             <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
+{{--                <div class="bg-white dark__bg-1000 rounded-2">--}}
+{{--                    <a class="dropdown-item" href="#">--}}
+{{--                        {{ Str::ucfirst(trans('messages.general.profile')) }}--}}
+{{--                    </a>--}}
+{{--                </div>--}}
                 <div class="bg-white dark__bg-1000 rounded-2">
-                    <a class="dropdown-item" href="#">
-                        {{ Str::ucfirst(trans('messages.general.profile')) }}
-                    </a>
-                </div>
-                <div class="bg-white dark__bg-1000 rounded-2">
+                    @if(Auth::check())
                     <a class="dropdown-item" href="{{ route('logout') }}">
-                        {{ Str::ucfirst(trans('messages.general.logout')) }}
+                       Выйти
                     </a>
+                    @endif
                 </div>
             </div>
         </li>
