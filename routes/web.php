@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/review/store', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'store'])->name('admin.review.store');
     Route::get('/admin/review/edit/{id}', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'edit'])->name('admin.review.edit');
     Route::get('/admin/review/delete/{id}', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'delete'])->name('admin.review.delete');
+    Route::post('/admin/review/change/{id}', [\App\Http\Controllers\Admin\Review\ReviewController::class, 'change'])->name('admin.review.change');
 
 
     Route::get('/admin/seo/lading', [SeoController::class, 'seoIndex'])->name('admin.seo.lading');
@@ -56,6 +57,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/admin/setting', [SettingsController::class, 'setting'])->name('admin.setting.list');
     Route::post('/admin/setting/{id}', [SettingsController::class, 'update'])->name('admin.setting.update');
+
+
+    Route::get('/admin/menu', [SettingsController::class, 'menu'])->name('admin.menu');
+    Route::post('/admin/menu/{id}', [SettingsController::class, 'updateMenu'])->name('admin.menu.update');
+
 
     Route::get('/admin/block/blockone/', [\App\Http\Controllers\Admin\Block\BlockController::class, 'blockOne'])->name('admin.block.blockOne');
     Route::post('/admin/block/blockone/update/{id}', [\App\Http\Controllers\Admin\Block\BlockController::class, 'updateBlockOne'])->name('admin.block.update.blockOne');

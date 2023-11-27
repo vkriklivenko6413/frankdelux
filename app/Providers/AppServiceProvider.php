@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layouts.app', function ($view) {
             $view->with('setting', Setting::query()->orderByDesc('created_at')->first());
+        });
+
+        view()->composer('layouts.app', function ($view) {
+            $view->with('menu', Menu::query()->orderByDesc('created_at')->first());
         });
     }
 }

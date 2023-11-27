@@ -27,22 +27,22 @@
                 <nav class="header__menu menu">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="#advantages" id="advantages-id" class="menu__link">Преимущества</a>
+                            <a href="#advantages" id="advantages-id" class="menu__link">{{ $menu->menu_1[app()->getLocale()] }}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#about" id="about-id" class="menu__link">О нас</a>
+                            <a href="#about" id="about-id" class="menu__link">{{ $menu->menu_2[app()->getLocale()] }}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#categories" id="categories-id" class="menu__link">Категории</a>
+                            <a href="#categories" id="categories-id" class="menu__link">{{ $menu->menu_3[app()->getLocale()] }}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#reviews" id="reviews-id" class="menu__link">Отзывы</a>
+                            <a href="#reviews" id="reviews-id" class="menu__link">{{ $menu->menu_4[app()->getLocale()] }}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#footer" id="footer-id" class="menu__link">Контакты</a>
+                            <a href="#footer" id="footer-id" class="menu__link">{{ $menu->menu_5[app()->getLocale()] }}</a>
                         </li>
                         <li class="menu__item">
-                            <a href="#form" id="form-id" class="menu__link">Оставить заявку</a>
+                            <a href="#form" id="form-id" class="menu__link">{{ $menu->menu_6[app()->getLocale()] }}</a>
                         </li>
                     </ul>
                 </nav>
@@ -93,19 +93,19 @@
                     <nav class="footer__menu">
                         <ul class="footer__list">
                             <li class="footer__item">
-                                <a href="#advantages" id="advantages-f" class="footer__link">Преимущества</a>
+                                <a href="#advantages" id="advantages-f" class="footer__link">{{ $menu->menu_1[app()->getLocale()] }}</a>
                             </li>
                             <li class="footer__item">
-                                <a href="#about" id="about-f" class="footer__link">О нас</a>
+                                <a href="#about" id="about-f" class="footer__link">{{ $menu->menu_2[app()->getLocale()] }}</a>
                             </li>
                             <li class="footer__item">
-                                <a href="#categories" id="categories-f" class="footer__link">Категории</a>
+                                <a href="#categories" id="categories-f" class="footer__link">{{ $menu->menu_3[app()->getLocale()] }}</a>
                             </li>
                             <li class="footer__item">
-                                <a href="#reviews" id="reviews-f" class="footer__link">Отзывы</a>
+                                <a href="#reviews" id="reviews-f" class="footer__link">{{ $menu->menu_4[app()->getLocale()] }}</a>
                             </li>
                             <li class="footer__item">
-                                <a href="#form" id="form-f" class="footer__link">Оставить заявку</a>
+                                <a href="#form" id="form-f" class="footer__link">{{ $menu->menu_5[app()->getLocale()] }}</a>
                             </li>
                         </ul>
                     </nav>

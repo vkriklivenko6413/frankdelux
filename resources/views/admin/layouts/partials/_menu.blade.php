@@ -97,6 +97,16 @@
                         </span>
                     </div>
                 </a>
+                <a class="nav-link" href="{{ route('admin.menu') }}" role="button">
+                    <div class="d-flex align-items-center">
+                        <span class="nav-link-icon">
+                            <span class="fas fa-tags"></span>
+                        </span>
+                        <span class="nav-link-text ps-1">
+                            Меню
+                        </span>
+                    </div>
+                </a>
                 <a class="nav-link" href="{{ route('admin.setting.list') }}" role="button">
                     <div class="d-flex align-items-center">
                         <span class="nav-link-icon">

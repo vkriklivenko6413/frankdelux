@@ -58,7 +58,7 @@
 
                                         <div>
                                             <br>
-                                            <button class="btn btn-success" type="submit">Зберегти</button>
+                                            <button class="btn btn-success" type="submit">Изменить</button>
                                         </div>
                                     </div>
                                 </div>

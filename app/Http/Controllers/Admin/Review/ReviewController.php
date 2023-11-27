@@ -52,26 +52,55 @@ class ReviewController extends Controller
 
         Review::query()->create($row);
 
-        return redirect()->back()->with('success','Успех');
+        return redirect()->back()->with('success', 'Успех');
     }
 
     public function edit($id): View
     {
-        $review = Review::query()->where('id','=',$id)->first();
+        $review = Review::query()->where('id', '=', $id)->first();
 
         return view('admin.review.edit', compact('review'));
     }
 
-    public function change($id)
+    public function change($id, Request $request)
     {
+        $review = Review::query()->where('id', $id)->first();
 
+        $data = $request->validate([
+            'title_ru' => 'required',
+            'title_ro' => 'required',
+            'description_ru' => 'required',
+            'description_ro' => 'required',
+            'photo' => 'nullable',
+            'rating' => 'required',
+            'avatar' => 'nullable',
+        ]);
+
+        $row = [
+            'name' => [
+                'ru' => $data['title_ru'],
+                'ro' => $data['title_ro'],
+            ],
+            'description' => [
+                'ru' => $data['description_ru'],
+                'ro' => $data['description_ro'],
+            ],
+            'photo' => $this->uploadPhoto($request->photo) ?? $review->photo,
+            'avatar' => $this->uploadPhoto($request->avatar) ?? $review->avatar,
+            'rating' => $data['rating']
+        ];
+
+       $review->update($row);
+       $review->save();
+
+        return redirect()->back()->with('success', 'Успех');
     }
 
     public function delete($id): RedirectResponse
     {
-        Review::query()->where('id','=',$id)->delete();
+        Review::query()->where('id', '=', $id)->delete();
 
-        return redirect()->back()->with('success','Успех');
+        return redirect()->back()->with('success', 'Успех');
     }
 
     private function uploadPhoto(?UploadedFile $photo): ?string
