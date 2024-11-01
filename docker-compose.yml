@@ -4,7 +4,7 @@ services:
 
     mariadb:
         image: mariadb:10.8.2
-        container_name: stelaj_mariadb
+        container_name: mariadb
         environment:
             - MYSQL_ROOT_PASSWORD=9YMSjf3DG2N4
             - MYSQL_USER=stelaj
@@ -17,7 +17,7 @@ services:
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: stelaj_phpmyadmin
+        container_name: phpmyadmin
         environment:
             - PMA_HOST=stelaj_mariadb
             - UPLOAD_LIMIT=5242880000
